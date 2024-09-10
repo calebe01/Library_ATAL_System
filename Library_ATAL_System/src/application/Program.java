@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        LinkedList bookShelf = new LinkedList(); // Cria uma instância da lista encadeada
+        LinkedList bookShelf = new LinkedList(); // instância da lista encadeada
         
-        // Inicializa a lista com 20 livros
+        
         bookShelf.initializeBooks();
         
         int option;
@@ -27,7 +27,6 @@ public class Program {
                     System.out.print("Enter book year: ");
                     String year = sc.nextLine();
                     
-                    // Cria um novo objeto Collection e adiciona à lista
                     Collection book = new Collection();
                     book.setTitulo(title);
                     book.setAutor(author);
@@ -45,7 +44,7 @@ public class Program {
                     } else if (listOption == 2) {
                         System.out.println("Listing books sorted by title:");
                         bookShelf.bubbleSortByTitle();  // Ordena os livros por título usando Bubble Sort
-                        bookShelf.list();  // Lista os livros ordenados
+                        bookShelf.list();  
                     } else {
                         System.out.println("Invalid option. Returning to main menu.");
                     }
@@ -53,7 +52,7 @@ public class Program {
                 case 3:
                     System.out.print("Enter the author to search for: ");
                     String searchAuthor = sc.nextLine();
-                    bookShelf.searchByAuthor(searchAuthor);  // Chama o método para buscar livros por autor
+                    bookShelf.searchByAuthor(searchAuthor);  /
                     break;
                 case 4:
                     System.out.println("Thank you for using the library system!");
