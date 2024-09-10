@@ -1,24 +1,27 @@
-# Sistema de Gerenciamento de Livros
-
-Este projeto é um sistema simples de gerenciamento de livros desenvolvido em Java, utilizando uma lista encadeada para armazenar e organizar os livros sem o uso do Collections Framework.
-
-## Funcionalidades
-
-- **Adicionar Livros**: Permite adicionar livros com informações de título, autor e ano de publicação.
-- **Listar Livros**: Possibilidade de listar os livros na ordem original ou ordenados por título utilizando o algoritmo Bubble Sort.
-- **Buscar Livros**: Função para buscar livros por autor, exibindo todos os livros correspondentes.
+# Documentação do Projeto
 
 ## Estrutura de Dados Utilizada
 
-- **Lista Encadeada**: Utilizada para armazenar os objetos de livros (`Collection`). A lista é implementada manualmente sem o uso de bibliotecas prontas, como o `ArrayList`.
-- **Nós (`Noh`)**: Cada nó armazena um objeto de livro e uma referência para o próximo nó na lista.
+No projeto, utilizamos uma **Lista Encadeada** como estrutura de dados principal, implementada na classe `LinkedList.java`. Esta escolha foi feita para permitir inserções e remoções eficientes de elementos, o que é particularmente útil para o gerenciamento dinâmico de uma coleção de livros.
 
-## Algoritmo de Ordenação
+A lista encadeada é composta de nós, representados pela classe `Noh.java`. Cada nó contém um objeto da classe `Collection.java`, que armazena informações sobre um livro (título, autor e ano), e uma referência para o próximo nó na lista. Essa abordagem facilita a inserção de novos livros na lista sem a necessidade de redimensionamento, diferentemente de uma estrutura baseada em arrays.
 
-- **Bubble Sort**: Implementado para ordenar os livros por título. O algoritmo é simples e fácil de entender, ideal para fins educacionais e para ilustrar como funcionam os algoritmos de ordenação básicos.
+### Vantagens da Lista Encadeada:
+- **Inserção e remoção rápidas:** Não é necessário mover outros elementos, apenas ajustar as referências dos nós.
+- **Uso dinâmico de memória:** A memória é alocada conforme necessário, evitando desperdícios.
 
-## Como Usar
+## Algoritmos de Ordenação Utilizados
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+Para ordenar os livros na lista encadeada, foi implementado o algoritmo **Bubble Sort**, disponível no método `bubbleSortByTitle()` na classe `LinkedList.java`. Este método organiza os livros em ordem alfabética com base nos títulos.
+
+### Escolha do Bubble Sort:
+O **Bubble Sort** foi escolhido por sua simplicidade de implementação e porque a lista encadeada permite fácil acesso e troca de elementos adjacentes. Embora o Bubble Sort tenha complexidade O(n²) no pior caso, o que o torna menos eficiente para grandes listas, ele é adequado para este projeto devido ao número limitado de elementos (livros).
+
+### Funcionamento do Bubble Sort na Lista Encadeada:
+1. **Comparação de Elementos:** Cada par de nós adjacentes é comparado com base no título do livro.
+2. **Troca de Elementos:** Se os elementos estiverem fora de ordem, suas posições são trocadas ajustando as referências dos nós.
+3. **Repetição do Processo:** O processo é repetido até que toda a lista esteja ordenada.
+
+## Conclusão
+
+A combinação da lista encadeada com o Bubble Sort oferece uma solução simples e funcional para o gerenciamento e ordenação de uma coleção de livros neste projeto. Apesar das limitações de desempenho do Bubble Sort, sua facilidade de implementação e a eficiência das operações da lista encadeada o tornam uma escolha prática para o contexto atual.
