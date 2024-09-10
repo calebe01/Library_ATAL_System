@@ -1,68 +1,64 @@
 package entities;
 
 public class LinkedList {
-    private Noh head;  // Referência para o primeiro nó da lista
-
+    private Noh head;  
     public LinkedList() {
         this.head = null;  // A lista começa vazia
     }
 
-    // Método para adicionar um novo livro à lista
     public void add(Collection collection) {
-        Noh newNode = new Noh(collection);  // Cria um novo nó com o objeto Collection
-        if (head == null) {  // Se a lista estiver vazia
-            head = newNode;  // O novo nó se torna o primeiro nó (head)
+        Noh newNode = new Noh(collection);  
+        if (head == null) {  
+            head = newNode;  
         } else {
-            Noh current = head;  // Começa do início da lista
-            while (current.proximo != null) {  // Percorre até o último nó
+            Noh current = head;  
+            while (current.proximo != null) {
                 current = current.proximo;
             }
-            current.proximo = newNode;  // Adiciona o novo nó ao final da lista
+            current.proximo = newNode;  
         }
     }
 
-    // Método para listar todos os livros
+   
     public void list() {
-        Noh current = head;  // Começa do início da lista
-        while (current != null) {  // Percorre a lista até o final
+        Noh current = head;  
+        while (current != null) {  
             System.out.println("Título: " + current.data.getTitulo() + 
                                ", Autor: " + current.data.getAutor() + 
                                ", Ano: " + current.data.getAno());
-            current = current.proximo;  // Move para o próximo nó
+            current = current.proximo; 
         }
     }
     
- // Método para ordenar os livros por título usando Bubble Sort
+ 
     public void bubbleSortByTitle() {
-        if (head == null || head.proximo == null) return;  // Se a lista estiver vazia ou com um único nó, não há o que ordenar
+        if (head == null || head.proximo == null) return;  
         
         boolean swapped;
         do {
             swapped = false;
             Noh current = head;
             while (current.proximo != null) {
-                // Comparação ignorando diferenças entre maiúsculas e minúsculas
                 if (current.data.getTitulo().toLowerCase().compareTo(current.proximo.data.getTitulo().toLowerCase()) > 0) {
                     // Troca dos dados dos nós
                     Collection temp = current.data;
                     current.data = current.proximo.data;
                     current.proximo.data = temp;
-                    swapped = true;  // Indica que uma troca foi feita
+                    swapped = true;  
                 }
-                current = current.proximo;  // Move para o próximo nó
-            }
-        } while (swapped);  // Continua enquanto houver trocas
+                current = current.proximo;  
+        } while (swapped);  
     }
     
     public void searchByAuthor(String author) {
-        Noh current = head;  // Começa do início da lista
-        boolean found = false;  // Flag para verificar se encontrou algum livro
-        while (current != null) {  // Percorre a lista até o final
+        Noh current = head;  
+        boolean found = false;  
+        while (current != null) {  
             if (current.data.getAutor().equalsIgnoreCase(author)) {  // Verifica se o autor corresponde
                 System.out.println("Título: " + current.data.getTitulo() + 
                                    ", Autor: " + current.data.getAutor() + 
                                    ", Ano: " + current.data.getAno());
-                found = true;  // Marca que encontrou pelo menos um livro
+                found = true;  
             }
             current = current.proximo;  // Move para o próximo nó
         }
@@ -71,7 +67,6 @@ public class LinkedList {
         }
     }
 
-    // Método para inicializar a lista com 20 livros
     public void initializeBooks() {
         String[][] books = {
             {"Clean Code", "Robert C. Martin", "2008"},
