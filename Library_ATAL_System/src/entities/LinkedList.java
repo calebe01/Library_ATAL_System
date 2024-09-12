@@ -47,8 +47,10 @@ public class LinkedList {
                     swapped = true;  
                 }
                 current = current.proximo;  
-        } while (swapped);  
+            }
+        } while (swapped);  // Corrigido: adicionado a chave de fechamento
     }
+
     
     public void searchByAuthor(String author) {
         Noh current = head;  
