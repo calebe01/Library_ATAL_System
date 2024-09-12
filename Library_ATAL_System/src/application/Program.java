@@ -52,7 +52,7 @@ public class Program {
                 case 3:
                     System.out.print("Enter the author to search for: ");
                     String searchAuthor = sc.nextLine();
-                    bookShelf.searchByAuthor(searchAuthor);  /
+                    bookShelf.searchByAuthor(searchAuthor);  
                     break;
                 case 4:
                     System.out.println("Thank you for using the library system!");
