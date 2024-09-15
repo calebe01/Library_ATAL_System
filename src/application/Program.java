@@ -6,9 +6,8 @@ import java.util.Scanner;
 public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        LinkedList bookShelf = new LinkedList(); // Create an instance of the linked list
+        LinkedList bookShelf = new LinkedList(); 
         
-        // Initialize the list with 20 books
         bookShelf.initializeBooks();
         
         int option;
@@ -34,7 +33,7 @@ public class Program {
                     System.out.print("Enter the publication year: ");
                     String year = sc.nextLine();
                     
-                    // Create a new Collection object and add it to the list
+                    
                     Collection book = new Collection();
                     book.setTitulo(title);
                     book.setAutor(author);
@@ -53,11 +52,11 @@ public class Program {
                     sc.nextLine();
                     if (listOption == 1) {
                         System.out.println("\nListing books in original order:");
-                        bookShelf.list();  // List books in the original order
+                        bookShelf.list();  
                     } else if (listOption == 2) {
                         System.out.println("\nListing books sorted by title:");
-                        bookShelf.bubbleSort();  // Sort books by title using Bubble Sort
-                        bookShelf.list();  // List sorted books
+                        bookShelf.bubbleSort();  
+                        bookShelf.list();  
                     } else {
                         System.out.println("Invalid option. Returning to the main menu.");
                     }
@@ -67,7 +66,7 @@ public class Program {
                     System.out.print("Enter the author's name: ");
                     String searchAuthor = sc.nextLine();
                     System.out.println("Searching for books by: " + searchAuthor);
-                    bookShelf.searchByAuthor(searchAuthor); // Call the search method
+                    bookShelf.searchByAuthor(searchAuthor); 
                     break;
                 case 4:
                     System.out.println("\nThank you for using the library system!");
