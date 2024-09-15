@@ -1,34 +1,32 @@
 package entities;
 
 public class LinkedList {
-    private Noh head;  // Referência para o primeiro nó da lista
-
+    private Noh head;  
     public LinkedList() {
-        this.head = null;  // A lista começa vazia
+        this.head = null;  
     }
 
-    // Método para adicionar um novo livro à lista
+    
     public void add(Collection collection) {
-        Noh newNode = new Noh(collection);  // Cria um novo nó com o objeto Collection
-        if (head == null) {  // Se a lista estiver vazia
-            head = newNode;  // O novo nó se torna o primeiro nó (head)
+        Noh newNode = new Noh(collection);  
+        if (head == null) {  
+            head = newNode;  
         } else {
-            Noh current = head;  // Começa do início da lista
-            while (current.proximo != null) {  // Percorre até o último nó
+            Noh current = head;  
+            while (current.proximo != null) {  
                 current = current.proximo;
             }
-            current.proximo = newNode;  // Adiciona o novo nó ao final da lista
+            current.proximo = newNode;  
         }
     }
 
-    // Método para listar todos os livros
     public void list() {
-        Noh current = head;  // Começa do início da lista
-        while (current != null) {  // Percorre a lista até o final
+        Noh current = head;  
+        while (current != null) {  
             System.out.println("Título: " + current.data.getTitulo() + 
                                ", Autor: " + current.data.getAutor() + 
                                ", Ano: " + current.data.getAno());
-            current = current.proximo;  // Move para o próximo nó
+            current = current.proximo;  
         }
     }
 
@@ -61,12 +59,12 @@ public class LinkedList {
             current = current.proximo;
         }
 
-        // Bubble Sort usando apenas loops 'for'
+       
         for (int i = 0; i < size - 1; i++) {
             Noh currentNode = head;
             Noh nextNode = head.proximo;
             for (int j = 0; j < size - 1 - i; j++) {
-                // Comparar os títulos dos livros (case insensitive)
+                // Comparar os títulos dos livros
                 if (currentNode.data.getTitulo().compareToIgnoreCase(nextNode.data.getTitulo()) > 0) {
                     // Trocar os dados entre os nós
                     Collection temp = currentNode.data;
@@ -79,7 +77,7 @@ public class LinkedList {
         }
     }
 
-    // Método para inicializar a lista com 20 livros
+    
     public void initializeBooks() {
         String[][] books = {
             {"Clean Code", "Robert C. Martin", "2008"},
